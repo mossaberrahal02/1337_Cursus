@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:11:58 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/22 12:31:24 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/11/29 09:57:09 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // }
 // int main()
 // {
-// 	char * tab = ft_strmapi("mossab", ttto_upper);
+// 	char * tab = ft_strmapi("mossab", NULL);
 // 	printf("%s\n", tab);
 // }
