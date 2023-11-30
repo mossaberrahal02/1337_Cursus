@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_put_hexdeci_uc.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 09:25:36 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/29 16:36:12 by merrahal         ###   ########.fr       */
+/*   Created: 2023/11/29 10:53:37 by merrahal          #+#    #+#             */
+/*   Updated: 2023/11/29 21:17:37 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int ft_putchar(char c)
+int ft_put_hexdeci_uc(unsigned int nb)
 {
-    write(1, &c, 1);
-    return (1);
+    int len;
+    char *baselements;
+
+    len = 0;
+    baselements = "0123456789ABCDEF";
+    if(nb > 15)
+        len += ft_put_hexdeci_uc(nb/16);
+    len += write(1, &baselements[nb%16],1);
+    return(len);
 }

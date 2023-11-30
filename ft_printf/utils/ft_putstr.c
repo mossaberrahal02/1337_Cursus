@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:06:57 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/27 16:44:14 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/11/29 16:36:20 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int ft_putstr(const char *str)
 {

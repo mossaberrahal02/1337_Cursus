@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_put_unsigned_decimal.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 09:25:36 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/29 16:36:12 by merrahal         ###   ########.fr       */
+/*   Created: 2023/11/29 10:12:43 by merrahal          #+#    #+#             */
+/*   Updated: 2023/11/29 17:10:53 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int ft_putchar(char c)
+int ft_put_unsigned_decimal(unsigned int n)
 {
-    write(1, &c, 1);
-    return (1);
+    int len;
+	unsigned int nb;
+
+    len = 0;
+	nb = n;
+    if (nb < 10)
+	{
+		nb = nb + '0';
+		len += write(1, &nb, 1);
+	}
+	else
+	{
+		len += ft_put_unsigned_decimal(nb / 10);
+		len += ft_put_unsigned_decimal(nb % 10);
+	}
+	return (len);
 }
