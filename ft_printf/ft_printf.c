@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 16:25:53 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/03 01:49:57 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/03 15:56:16 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	ft_caller(va_list args, char c)
 	else if (c == 'u')
 		len += ft_put_unsigned_decimal(va_arg(args, unsigned int));
 	else if (c == 'x')
-		len += ft_put_hexdeci_lc(va_arg(args, unsigned long));
+		len += ft_put_hexdeci_lc(va_arg(args, unsigned int));
 	else if (c == 'X')
-		len += ft_put_hexdeci_uc(va_arg(args, unsigned long));
+		len += ft_put_hexdeci_uc(va_arg(args, unsigned int));
 	else if (c == '%')
 		len += ft_putchar('%');
 	return (len);
@@ -38,9 +38,9 @@ int	ft_caller(va_list args, char c)
 
 int	ft_printf(char const *str, ...)
 {
-	int			i;
-	static int	len;
-	va_list		args;
+	int		i;
+	int		len;
+	va_list	args;
 
 	i = 0;
 	len = 0;
