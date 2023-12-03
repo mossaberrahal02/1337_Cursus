@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:26:20 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/29 22:00:15 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/03 01:19:56 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 static int ft_put_hex(unsigned long nb)
 {

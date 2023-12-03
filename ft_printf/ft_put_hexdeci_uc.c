@@ -6,13 +6,13 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 10:53:37 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/29 21:17:37 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/03 01:20:10 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
-int ft_put_hexdeci_uc(unsigned int nb)
+int ft_put_hexdeci_uc(unsigned long nb)
 {
     int len;
     char *baselements;

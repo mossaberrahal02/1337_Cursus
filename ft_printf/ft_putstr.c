@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 09:25:36 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/29 16:36:12 by merrahal         ###   ########.fr       */
+/*   Created: 2023/11/27 16:06:57 by merrahal          #+#    #+#             */
+/*   Updated: 2023/12/03 01:20:23 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
-int ft_putchar(char c)
+int ft_putstr(const char *str)
 {
-    write(1, &c, 1);
-    return (1);
+    int i;
+    i = 0;
+    while(str[i])
+    {
+        write(1, &str[i], 1);
+        i++;
+    }
+    return (i);
 }

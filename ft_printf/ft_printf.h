@@ -12,8 +12,7 @@ int		ft_putchar(char c);
 int		ft_putstr(const char *str);
 int		ft_putnbr(int nb);
 int		ft_put_unsigned_decimal(unsigned int n);
-int		ft_put_hexdeci_lc(unsigned int nb);
-int		ft_put_hexdeci_uc(unsigned int nb);
-int     ft_putpercent(void);
+int		ft_put_hexdeci_lc(unsigned long nb);
+int		ft_put_hexdeci_uc(unsigned long nb);
 int     ft_put_adress(unsigned long adrs);
 #endif
