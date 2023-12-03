@@ -12,15 +12,15 @@
 
 #include "ft_printf.h"
 
-int ft_put_hexdeci_lc(unsigned long nb)
+int	ft_put_hexdeci_lc(unsigned long nb)
 {
-    int len;
-    char *baselements;
+	int		len;
+	char	*baselements;
 
-    len = 0;
-    baselements = "0123456789abcdef";
-    if(nb > 15)
-        len += ft_put_hexdeci_lc(nb/16);
-    len += write(1, &baselements[nb%16],1);
-    return(len);
+	len = 0;
+	baselements = "0123456789abcdef";
+	if (nb > 15)
+		len += ft_put_hexdeci_lc(nb / 16);
+	len += write(1, &baselements[nb % 16], 1);
+	return (len);
 }

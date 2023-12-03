@@ -6,14 +6,14 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 09:25:36 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/03 01:20:16 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/03 01:58:12 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
-    write(1, &c, 1);
-    return (1);
+	write(1, &c, 1);
+	return (1);
 }

@@ -12,14 +12,14 @@
 
 #include "ft_printf.h"
 
-int ft_put_unsigned_decimal(unsigned int n)
+int	ft_put_unsigned_decimal(unsigned int n)
 {
-    int len;
-	unsigned int nb;
+	int				len;
+	unsigned int	nb;
 
-    len = 0;
+	len = 0;
 	nb = n;
-    if (nb < 10)
+	if (nb < 10)
 	{
 		nb = nb + '0';
 		len += write(1, &nb, 1);
