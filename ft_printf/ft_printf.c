@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 16:25:53 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/03 15:56:16 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:30:06 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	ft_caller(va_list args, char c)
 		len += ft_put_hexdeci_uc(va_arg(args, unsigned int));
 	else if (c == '%')
 		len += ft_putchar('%');
+	else
+		len += ft_putchar(c);
 	return (len);
 }
 
@@ -52,6 +54,8 @@ int	ft_printf(char const *str, ...)
 			len += ft_caller(args, str[i + 1]);
 			i++;
 		}
+		else if (str[i] == '%' && str[i + 1] == '\0')
+			break ;
 		else
 			len += ft_putchar(str[i]);
 		i++;

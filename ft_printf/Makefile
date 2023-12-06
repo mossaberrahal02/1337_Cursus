@@ -8,10 +8,10 @@ OFILES = $(CFILES:%.c=%.o)
 all : ${NAME}
 
 ${NAME} : $(OFILES)
-	ar rc $(NAME) $(OFILES)
+	ar rc $(NAME) $?
 
 $(OFILES): %.o:%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $?
 clean :
 	rm -f $(OFILES)
 fclean : clean
