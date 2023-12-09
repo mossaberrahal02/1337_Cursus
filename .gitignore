@@ -3,3 +3,5 @@ token
 a.out
 */a.out
 .macos
+*.txt
+.vscode
