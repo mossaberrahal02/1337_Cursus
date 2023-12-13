@@ -6,43 +6,126 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:42:50 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/07 18:41:19 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/13 10:14:28 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-#define BUFFER_SIZE  4
+char	*get_after_nl(char *str)
+{
+	size_t	i;
+	char	*tmp;
 
-char    *get_next_line(int fd)
-{
-    int readReturn;
-    int i = 0;
-    int j;
-    char *buff = malloc(BUFFER_SIZE + 1);
-    char *destbuff;
-    
-    // while ()
-    // {
-        readReturn = read(fd, buff, BUFFER_SIZE);
-        if (readReturn == 0)
-            printf("\nread returns 0\n");
-        else if(readReturn == -1)
-            printf("read returns -1\n");
-        // ft_strjoin(destbuff, buff);
-        //free(buff);
-        j = 0;
-        while (destbuff[j])
-            printf("%c", destbuff[j++]);
-        printf("\n==li jbedt men l file ==> %s\n", destbuff);
-        i++;
-    // }
-    // buff[BUFFER_SIZE + 1] = '\0';
-    return(buff);
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (str[i] != '\n' && str[i])
+		i++;
+	if (str[i] != '\0')
+		i++;
+	else
+	{
+		free(str);
+		return (NULL);
+	}
+	tmp = ft_strdup(str + i);
+	free(str);
+	return (tmp);
 }
-int main()
+
+char	*get_before_nl(char *str)
 {
-    int fd = open("./test.txt", O_RDWR);
-    get_next_line(fd);
-    return 0;
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return (NULL);
+	while (str[i] != '\n' && str[i])
+		i++;
+	return (ft_substr(str, 0, i + 1));
 }
+
+char	*ft_free(char **result, char *buffer)
+{
+	free(buffer);
+	free(*result);
+	*result = NULL;
+	return (NULL);
+}
+
+char	*get_line2(int fd, char **result)
+{
+	char	*str;
+	int		there_is_nl;
+	int     read_return ;
+
+	there_is_nl = ft_strchr(*result, '\n');
+	str = malloc(BUFFER_SIZE + 1);
+	while (!there_is_nl)
+	{
+		read_return = ( read(fd, str, BUFFER_SIZE));
+		if (read_return < 0)
+			return (ft_free(result, str));
+		str[read_return] = '\0';
+		*result = ft_strjoin(*result, str);
+		if (read_return == 0 && *result[0] != '\0')
+		{
+			free(str);
+			return (*result);
+		}
+		there_is_nl = ft_strchr(*result, '\n');
+		if (read_return == 0)
+			return (ft_free(result, str));
+	}
+	free(str);
+	return (*result);
+}
+
+char	*get_next_line(int fd)
+{
+	static char	*str;
+	char		*line;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	str = get_line2(fd, &str);
+	line = get_before_nl(str);
+	str = get_after_nl(str);
+	return (line);
+}
+
+// int main()
+// {
+
+// int fd = open("test.txt", O_RDONLY);
+// char *line;
+// while((line = get_next_line(fd)))
+// {
+//     printf("%s",line);
+// }
+//    
+	// int fd = open("/Users/merrahal/francinette/tests/get_next_line/gnlTester/files/42_with_nl",
+		//O_RDWR);
+//     // printf("\nxxxxx => %s",get_next_line(fd));
+//     // printf("\nxxxxx => %s",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+//     // printf("%s\n",get_next_line(fd));
+
+//     // printf("%s\n",get_next_line(fd));
+
+//     // get_next_line(fd);
+// }
