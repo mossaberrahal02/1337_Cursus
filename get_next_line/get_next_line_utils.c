@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 18:05:04 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/14 11:24:35 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:51:54 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ int	ft_strchr(const char *s, int c)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *substr;
-	size_t i;
-	size_t j;
+	char	*substr;
+	size_t	i;
+	size_t	j;
 
 	if (!s)
 		return (NULL);

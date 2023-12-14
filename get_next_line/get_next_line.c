@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:42:50 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/14 11:25:28 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:49:51 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ char	*get_line2(int fd, char **result)
 {
 	char	*str;
 	int		there_is_nl;
-	int     read_return ;
+	int		read_return ;
 
 	there_is_nl = ft_strchr(*result, '\n');
 	str = malloc(BUFFER_SIZE + 1);
 	while (!there_is_nl)
 	{
-		read_return = ( read(fd, str, BUFFER_SIZE));
+		read_return = (((read(fd, str, BUFFER_SIZE))));
 		if (read_return < 0)
 			return (ft_free(result, str));
 		str[read_return] = '\0';
@@ -87,7 +87,7 @@ char	*get_next_line(int fd)
 	static char	*str;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
 		return (NULL);
 	str = get_line2(fd, &str);
 	line = get_before_nl(str);
@@ -95,10 +95,10 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int main()
-{
-	int fd = open("test.txt", O_RDONLY);
-	char *line;
-	while((line = get_next_line(fd)))
-		printf("%s",line);
-}
+// int	main(void)
+// {
+// 	int fd = open("test.txt", O_RDONLY);
+// 	char *line;
+// 	// while((line = get_next_line(fd)))
+// 	printf("%s", line = get_next_line(fd));
+// }
