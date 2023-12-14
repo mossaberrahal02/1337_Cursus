@@ -11,6 +11,12 @@ ${NAME} : $(OFILES)
 
 %.o:%.c
 	$(CC) $(CFLAGS) -c $?
+
+git :
+	git add .
+	git commit -m "get_next_line"
+	git push
+
 clean :
 	rm -f $(OFILES)
 fclean : clean
