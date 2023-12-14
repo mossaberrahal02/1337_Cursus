@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 11:44:59 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/14 11:45:02 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/14 22:46:39 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 // hna ndir BUFFER_SIZE = ??
 char	*get_next_line(int fd);

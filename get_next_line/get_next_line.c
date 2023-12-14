@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:42:50 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/14 11:49:51 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/14 23:05:12 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*get_line2(int fd, char **result)
 	str = malloc(BUFFER_SIZE + 1);
 	while (!there_is_nl)
 	{
-		read_return = (((read(fd, str, BUFFER_SIZE))));
+		read_return = (read(fd, str, BUFFER_SIZE));
 		if (read_return < 0)
 			return (ft_free(result, str));
 		str[read_return] = '\0';
@@ -97,8 +97,12 @@ char	*get_next_line(int fd)
 
 // int	main(void)
 // {
-// 	int fd = open("test.txt", O_RDONLY);
-// 	char *line;
-// 	// while((line = get_next_line(fd)))
-// 	printf("%s", line = get_next_line(fd));
+	// int fd = open("test.txt",O_CREAT, O_RDONLY);
+	// char *line;
+	// while((line = get_next_line(fd)))
+	// 	printf("%s", line);
+
+	// printf("%s", line = get_next_line(fd));
+	// printf("%s", line = get_next_line(fd));
+	// printf("%s", line = get_next_line(fd));
 // }
