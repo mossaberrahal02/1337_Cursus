@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:31:02 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/14 22:58:49 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/01/12 16:50:21 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-// hna ndir BUFFER_SIZE = ??
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);

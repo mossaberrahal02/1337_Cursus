@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:29:48 by merrahal          #+#    #+#             */
-/*   Updated: 2023/12/14 23:03:36 by merrahal         ###   ########.fr       */
+/*   Updated: 2023/12/15 00:50:49 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,17 +94,4 @@ char	*get_next_line(int fd)
 	str[fd] = get_after_nl(str[fd]);
 	return (line);
 }
-// int main()
-// {
-// 	int fd1 = open("test1.txt", O_CREAT | O_RDONLY);
-// 	int fd2 = open("test2.txt", O_CREAT | O_RDONLY);
-// 	int fd3 = open("test3.txt", O_CREAT | O_RDONLY);
-// 	int fd4 = open("test4.txt", O_CREAT | O_RDONLY);
-// 	int fd5 = open("test5.txt", O_CREAT | O_RDONLY);
-// 	printf("\nfd1--> %s", get_next_line(fd1));
-// 	printf("\nfd2--> %s", get_next_line(fd2));
-// 	printf("\nfd22--> %s", get_next_line(fd2));
-// 	printf("\nfd3--> %s", get_next_line(fd3));
-// 	printf("\nfd4--> %s", get_next_line(fd4));
-// 	printf("\nfd5--> %s", get_next_line(fd5));
-// }
+
