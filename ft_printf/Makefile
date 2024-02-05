@@ -18,4 +18,9 @@ fclean : clean
 	rm -f $(NAME)
 re : fclean all
 
+git :
+	git add ../ft_printf/
+	git commit -m "so_long"
+	git push
+
 .SECONDARY: ${OFILES}
