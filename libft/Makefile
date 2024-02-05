@@ -10,10 +10,10 @@ CC 			= cc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $?
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $?
 
 clean:
 	rm -f $(OBJ)
@@ -22,3 +22,10 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+git :
+	git add ../libft/
+	git commit -m "libft"
+	git push
+
+.SECONDARY: ${OBJ}
