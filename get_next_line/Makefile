@@ -13,7 +13,7 @@ ${NAME} : $(OFILES)
 	$(CC) $(CFLAGS) -c $?
 
 git :
-	git add .
+	git add ../get_next_line/
 	git commit -m "get_next_line"
 	git push
 
