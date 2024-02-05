@@ -1,6 +1,4 @@
-#include <mlx.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "So_long.h"
 
 int my_func(int key, void *ptr)
 {
@@ -10,33 +8,33 @@ int my_func(int key, void *ptr)
 
 int main()
 {
-    void *mlx_ptr;
-    void *win_ptr;
+    t_var   data;
 
     // initialize minilibX
-    mlx_ptr = mlx_init();
+    data.mlx = mlx_init();
     //create a window
-    win_ptr = mlx_new_window(mlx_ptr, 800, 600, "my first window");
+    data.win = mlx_new_window(data.mlx, 800, 600, "my first window");
 
     int x,y;
-    x = y = 100;
+    y = 50;
+    x = 50;
     while(x < 300)
     {
-        while (y < 300)
+        while (y < 600)
         {
-            mlx_pixel_put(mlx_ptr, win_ptr, x, y, 0xFF0000);
+            mlx_pixel_put(data.mlx, data.win, x, y, 0xFF6600);
             y++;
         }
-        y = 0;
+        y = 50;
         x++;
-    }
+    }    
+    mlx_string_put(data.mlx, data.win, 100, 200, 0x0000FF, "Hello, MinilibX!");
     // displays the window and keeps it open
-    mlx_key_hook(win_ptr, my_func, NULL);
-    mlx_loop(mlx_ptr);
+    mlx_key_hook(data.win, my_func, NULL);
     
     
     
-    //mlx_clear_window(mlx_ptr, win_ptr);
-    // mlx_destroy_window(mlx_ptr, win_ptr); // it also free some thing is malloc(ed)
+    system("leaks solong");
+    mlx_loop(data.mlx);
     return (0);
 }
