@@ -20,7 +20,7 @@ re : fclean all
 
 git :
 	git add ../ft_printf/
-	git commit -m "so_long"
+	git commit -m "ft_printf"
 	git push
 
 .SECONDARY: ${OFILES}
