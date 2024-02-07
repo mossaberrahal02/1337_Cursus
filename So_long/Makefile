@@ -19,3 +19,5 @@ git :
 	git add ../So_long/
 	git commit -m "so_long"
 	git push
+
+.PHONY: all clean fclean re
