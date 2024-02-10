@@ -6,16 +6,16 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:23:36 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/10 21:43:29 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/10 22:44:04 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "So_long.h"
 
-int has_only_walls(char **arr)
-{
+// int has_only_walls(char **arr)
+// {
      
-}
+// }
 
 static size_t   ft_strlen_no_new_line(const char *str)
 {
@@ -75,17 +75,17 @@ void copy_map(char *path, size_t nbr_lines)
     {
         arr[i] = ft_strdup(line);
         // arr[i] = line;
-        strcpy(arr[i], line);
+        // strcpy(arr[i], line);
         i++;
         free(line);
     }
     arr[i] = NULL;
 // khas n check wash l map dayrin biha l walls aka 1
-    has_only_walls(arr);
+    // has_only_walls(arr);
     int j = 0;
     while (arr[j])
     {
-        // ft_printf("\nline %d  --> %s\n", j, arr[j]);
+        ft_printf("\nline %d  --> %s\n", j, arr[j]);
         free(arr[j]);//hmm should i do it right now
         j++;
     }
