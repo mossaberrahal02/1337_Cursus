@@ -28,4 +28,3 @@ git :
 	git commit -m "libft"
 	git push
 
-.SECONDARY: ${OBJ}
