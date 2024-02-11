@@ -10,3 +10,4 @@ solong
 tokenlinux
 libft.a
 libftprintf.a
+*.o

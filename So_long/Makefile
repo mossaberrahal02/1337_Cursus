@@ -8,7 +8,7 @@ LIBS = -lmlx -framework OpenGL -framework Appkit ft_printf/libftprintf.a get_nex
 all: ${NAME}
 
 ${NAME}: ${OFILES}
-	${CC} ${FLAGS} ${CFILES} -o ${NAME} ${LIBS} 
+	${CC} ${FLAGS} ${CFILES} -o ${NAME} ${LIBS} -fsanitize=address
 
 clean:
 	rm -f ${OFILES}
@@ -18,9 +18,9 @@ fclean: clean
 	
 re: fclean all
 
-git:
-	git add ../So_long/
-	git commit -m "so_long"
-	git push
+# git:
+# 	git add ../So_long/
+# 	git commit -m "so_long"
+# 	git push
 
 .PHONY: all clean fclean re

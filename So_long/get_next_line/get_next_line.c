@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:42:50 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/10 21:23:23 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/11 20:08:27 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*get_line2(int fd, char **result)
 {
 	char	*str;
 	int		there_is_nl;
-	int		read_return ;
+	int		read_return;
 
 	there_is_nl = ft_strchr2(*result, '\n');
 	str = malloc(BUFFER_SIZE + 1);
