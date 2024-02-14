@@ -18,6 +18,14 @@
 int	ft_printf(const char *str, ...);
 
 
+typedef struct	s_mc
+{
+	int i;
+    int j;
+    int E;
+    int C;
+    int P;
+}	t_mc;
 
 typedef struct  s_mlx
 {

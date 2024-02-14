@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:23:36 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/11 21:37:18 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/14 12:58:09 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void print_str_and_exit(const char *str)
 static int has_only_walls(char **arr, size_t nbr_lines, size_t nbr_collumns)
 {
     size_t i = -1;
-    size_t j = 0;
+    // size_t j = 0;
     while ((++i < ft_strlen_no_new_line(arr[0])))//first line of the map
         if(arr[0][i] != '1')
             print_str_and_exit("first line in the map is not valid");
@@ -42,7 +42,7 @@ static int has_only_walls(char **arr, size_t nbr_lines, size_t nbr_collumns)
         if(arr[i][0] != '1')
             print_str_and_exit("chi line machi howa hadak");
         if(arr[i][nbr_collumns - 1] != '1')
-            print_str_and_exit("-->chi line machi howa hadak");
+            print_str_and_exit("chi line machi howa hadak");
     return (0);
 }
 
@@ -72,37 +72,30 @@ static void map_h_w_checkWidth(char *line, int fd, size_t *nbr_h_map, size_t *nb
 
 static void map_content(char **arr)
 {
-    int i;
-    int j;
-    int E;
-    int C;
-    int P;
-
-    i = 0;
-    j = 0;
-    E = 0;
-    C = 0;
-    P = 0;
-    while (arr[i])
+    t_mc mc;
+    // mc.i = 0;
+    // mc.P = 0;
+    ft_memset(&mc, 0, sizeof(t_mc));
+    while (arr[mc.i])
     {
-        while (arr[i][j] && arr[i][j] != '\n')
+        // mc.j = 0;
+        while (arr[mc.i][mc.j] && arr[mc.i][mc.j] != '\n')
         {
-            ft_printf(" %c ", arr[i][j]);
-            if (arr[i][j] == 'E')
-                E++;
-            else if (arr[i][j] == 'P')
-                P++;
-            else if (arr[i][j] == 'C')
-                C++;
-            j++;
+            if (arr[mc.i][mc.j] == 'E')
+                mc.E++;
+            else if (arr[mc.i][mc.j] == 'P')
+                mc.P++;
+            else if (arr[mc.i][mc.j] == 'C')
+                mc.C++;
+            else if (arr[mc.i][mc.j] != '0' && arr[mc.i][mc.j] != '1')
+                print_str_and_exit("lmap fiha chi haja men ghir {0, 1, P, C, E}");
+            mc.j++;
         }
-        ft_printf("\n");
-        j = 0;
-        i++;
+        mc.i++;
     }
-    if (E != 1 || P != 1 || C < 1)
+    printf("E = %d   P = %d  C = %d\n", mc.E, mc.P, mc.C);
+    if (mc.E != 1 || mc.P != 1 || mc.C < 1)
         print_str_and_exit("l map fiha chi haja zayda wla na9sa (E, P, C)");
-    
 }
 
 static void copy_map(char *path, size_t nbr_lines, size_t nbr_collumns)
@@ -110,7 +103,7 @@ static void copy_map(char *path, size_t nbr_lines, size_t nbr_collumns)
     int     fd;
     int     i;
     char    **arr;
-    char    *line;
+    (void)path;
     
     fd = open("./maps/map1.ber", O_RDONLY);
     if(fd < 0)
@@ -124,11 +117,11 @@ static void copy_map(char *path, size_t nbr_lines, size_t nbr_collumns)
     arr[i] = NULL;
     map_content(arr);
     has_only_walls(arr, nbr_lines - 1, nbr_collumns);
-    int j = 0;
 }
 
 static int map_checker(char *path, t_mlx *data)
 {
+    (void)data;
     path_checker(path);
     int fd = open("./maps/map1.ber", O_RDONLY);
     if(fd < 0)
@@ -147,7 +140,7 @@ static int map_checker(char *path, t_mlx *data)
 int main(int ac, char *av[])
 {
     t_mlx   data;
-    t_img   img;//useles till now 
+    //t_img   img;//useles till now 
     if (ac == 2)
     {
         map_checker(av[1], &data);
@@ -156,6 +149,7 @@ int main(int ac, char *av[])
     }
     else
         print_str_and_exit("many or less main arguments");
+    
     // system("leaks solong");
     return (0); 
 }
