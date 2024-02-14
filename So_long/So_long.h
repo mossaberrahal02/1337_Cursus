@@ -17,6 +17,11 @@
 //used functions
 int	ft_printf(const char *str, ...);
 
+typedef struct s_xy
+{
+	int x;
+	int y;
+}	t_xy;
 
 typedef struct	s_mc
 {
@@ -31,7 +36,7 @@ typedef struct  s_mlx
 {
     void    *mlx;
     void    *win;
-}               t_mlx;
+}               t_mlx; // 
 
 typedef struct	s_img {
 	void	*img;

@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:23:36 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/14 13:46:59 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/14 20:44:35 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,39 @@ static void print_str_and_exit(const char *str)
     exit(1);
 }
 
+static void flood_fill(char **arr, size_t x, size_t y, size_t nbr_lines, size_t nbr_collumns)
+{
+    if(x < 0 || y < 0 || x >= nbr_lines || y >= nbr_collumns) // check wach >= wla ghir > ????
+        return ;
+    if(arr[x][y] == '0' || arr[x][y] == 'E' || arr[x][y] == 'C' || arr[x][y] == 'P')
+    {
+        arr[x][y] = 'X';
+        flood_fill(arr, x + 1, y, nbr_lines, nbr_collumns);
+        flood_fill(arr, x - 1, y, nbr_lines, nbr_collumns);
+        flood_fill(arr, x, y + 1, nbr_lines, nbr_collumns);
+        flood_fill(arr, x, y - 1, nbr_lines, nbr_collumns);   
+    }
+}
+
 static int has_only_walls(char **arr, size_t nbr_lines, size_t nbr_collumns)
 {
     size_t i = -1;
     // size_t j = 0;
-    while ((++i < ft_strlen_no_new_line(arr[0])))//first line of the map
+    while ((++i < ft_strlen_no_new_line(arr[0])))
         if(arr[0][i] != '1')
             print_str_and_exit("first line in the map is not valid");
     i = -1;
-    while ((++i < ft_strlen_no_new_line(arr[nbr_lines])))//last line of the map
+    while ((++i < ft_strlen_no_new_line(arr[nbr_lines])))
         if(arr[nbr_lines][i] != '1')
             print_str_and_exit("last line in the map is not valid");
     i = 0;
     while(++i <= nbr_lines - 1)
     {
         if(arr[i][0] != '1')
-            print_str_and_exit("chi line machi howa hadak");
+            print_str_and_exit("first collumn men chi line machi hiya hadik");
         if(arr[i][nbr_collumns - 1] != '1')
-            print_str_and_exit("chi line machi howa hadak");
-    }// 2nd till before last line check wach yebda w ykemel b 1
+            print_str_and_exit("last collumn men chi line machi hiya hadik");
+    }
     return (0);
 }
 
@@ -75,12 +89,11 @@ static void map_h_w_checkWidth(char *line, int fd, size_t *nbr_h_map, size_t *nb
 static void map_content(char **arr)
 {
     t_mc mc;
-    // mc.i = 0;
-    // mc.P = 0;
+
     ft_memset(&mc, 0, sizeof(t_mc));
     while (arr[mc.i])
     {
-        // mc.j = 0;
+        mc.j = 0;
         while (arr[mc.i][mc.j] && arr[mc.i][mc.j] != '\n')
         {
             if (arr[mc.i][mc.j] == 'E')
@@ -91,65 +104,116 @@ static void map_content(char **arr)
                 mc.C++;
             else if (arr[mc.i][mc.j] != '0' && arr[mc.i][mc.j] != '1')
                 print_str_and_exit("lmap fiha chi haja men ghir {0, 1, P, C, E}");
-            mc.j++;
+            (mc.j)++;
         }
-        mc.i++;
+        (mc.i)++;
     }
-    printf("E = %d   P = %d  C = %d\n", mc.E, mc.P, mc.C);
     if (mc.E != 1 || mc.P != 1 || mc.C < 1)
         print_str_and_exit("l map fiha chi haja zayda wla na9sa (E, P, C)");
 }
 
-static void copy_map(char *path, size_t nbr_lines, size_t nbr_collumns)
+static char **dup_map(char *path, size_t nbr_lines)
 {
-    int     fd;
-    int     i;
-    char    **arr;
-    
+    int i;
+    char **arr;
+    int fd;
+
+    i = 0;
     fd = open(path, O_RDONLY);
     if(fd < 0)
-        print_str_and_exit("ma thelch l file dyal l map men l fnc copy_map()");
+        print_str_and_exit("ma thelch l file dyal l map men l fnc dup_map()");
     arr = malloc((nbr_lines + 1) * sizeof(char *));
     if (!arr)
-        print_str_and_exit("failed allocation from copy_map()");
+        print_str_and_exit("failed allocation from dup_map()");
     i = 0;
     while ((arr[i] = get_next_line(fd)))
         i++;
     arr[i] = NULL;
-    map_content(arr);
-    has_only_walls(arr, nbr_lines - 1, nbr_collumns);
+    return(arr);
 }
 
-static int map_checker(char *path, t_mlx *data)
+static void player_xy(char **arr, t_xy *player)
 {
-    (void)data;
-    path_checker(path);
-    int fd = open(path, O_RDONLY);
-    if(fd < 0)
-        print_str_and_exit("ma thelch l file dyal l map");
-    char *line = get_next_line(fd);
-    if(!line)
-        print_str_and_exit("unvalid MAP");
+    int i;
+    int j;
+
+    i = 0;
+    while (arr[i])
+    {   
+        j = 0;
+        while(arr[i][j])
+        {
+            if(arr[i][j] == 'P')
+            {
+                player->x = i;
+                player->y = j;
+            }
+            j++;
+        }
+        i++;
+    }
+}
+
+static void map(char *path, size_t nbr_lines, size_t nbr_collumns)
+{
+    char    **arr;
+    char    **arr2;
+    t_xy    player;
+    int i, j;
+
+    arr = dup_map(path, nbr_lines);
+    arr2 = dup_map(path, nbr_lines);
+    map_content(arr);
+    has_only_walls(arr, nbr_lines - 1, nbr_collumns);
+    player_xy(arr, &player);
+    flood_fill(arr2, player.x,  player.y, nbr_lines, nbr_collumns);
+
+    i = 0;
+    while (arr2[i])
+    {
+        j = 0;
+        while(arr2[i][j])
+        {
+            if(arr2[i][j] == 'C' || arr2[i][j] == 'P' || arr2[i][j] == 'E')
+                print_str_and_exit("map can't b played");
+            j++;
+        }
+        i++;
+    }
+}
+
+static int map_checker(char *path)
+{
     size_t nbr_h_map;
     size_t nbr_w_map;
+    int fd;
+    char *line;
+
+    path_checker(path);
+    fd = open(path, O_RDONLY);
+    if(fd < 0)
+        print_str_and_exit("ma thelch l file dyal l map");
+    line = get_next_line(fd);
+    if(!line)
+        print_str_and_exit("unvalid MAP");
     nbr_w_map = ft_strlen_no_new_line(line);
     map_h_w_checkWidth(line, fd, &nbr_h_map, &nbr_w_map);
-    copy_map(path, nbr_h_map, nbr_w_map);
+    map(path, nbr_h_map, nbr_w_map);
     return (0);
 }
 
 int main(int ac, char *av[])
 {
-    t_mlx   data;
+    // t_mlx   data;
     //t_img   img;//useles till now 
     if (ac == 2)
     {
-        map_checker(av[1], &data);
-        ft_printf("map hiyaaa hadik ");
+        map_checker(av[1]);
+        ft_printf("\nmap hiyaaa hadik\n");
     }
     else
         print_str_and_exit("many or less main arguments");
     
-    // system("leaks solong");
+    system("leaks so_long");
     return (0); 
 }
