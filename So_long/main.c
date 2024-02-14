@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:23:36 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/14 12:58:09 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/14 13:46:59 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ static int has_only_walls(char **arr, size_t nbr_lines, size_t nbr_collumns)
         if(arr[nbr_lines][i] != '1')
             print_str_and_exit("last line in the map is not valid");
     i = 0;
-    while(++i <= nbr_lines - 1)// 2nd till before last line check wach yebda w ykemel b 1
+    while(++i <= nbr_lines - 1)
+    {
         if(arr[i][0] != '1')
             print_str_and_exit("chi line machi howa hadak");
         if(arr[i][nbr_collumns - 1] != '1')
             print_str_and_exit("chi line machi howa hadak");
+    }// 2nd till before last line check wach yebda w ykemel b 1
     return (0);
 }
 
@@ -103,9 +105,8 @@ static void copy_map(char *path, size_t nbr_lines, size_t nbr_collumns)
     int     fd;
     int     i;
     char    **arr;
-    (void)path;
     
-    fd = open("./maps/map1.ber", O_RDONLY);
+    fd = open(path, O_RDONLY);
     if(fd < 0)
         print_str_and_exit("ma thelch l file dyal l map men l fnc copy_map()");
     arr = malloc((nbr_lines + 1) * sizeof(char *));
@@ -123,7 +124,7 @@ static int map_checker(char *path, t_mlx *data)
 {
     (void)data;
     path_checker(path);
-    int fd = open("./maps/map1.ber", O_RDONLY);
+    int fd = open(path, O_RDONLY);
     if(fd < 0)
         print_str_and_exit("ma thelch l file dyal l map");
     char *line = get_next_line(fd);
@@ -145,7 +146,6 @@ int main(int ac, char *av[])
     {
         map_checker(av[1], &data);
         ft_printf("map hiyaaa hadik ");
-        
     }
     else
         print_str_and_exit("many or less main arguments");
