@@ -6,8 +6,10 @@ a.out
 *.txt
 .vscode
 gnl.a
-solong
+so_long
 tokenlinux
 libft.a
 libftprintf.a
 *.o
+solong.dSYM/
+test.c
