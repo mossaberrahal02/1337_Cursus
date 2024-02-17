@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:21 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/16 15:02:28 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/17 14:59:31 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../So_long.h"
+#include "../includes/So_long.h"
 
 int	has_only_walls(char **arr, size_t nbr_lines, size_t nbr_collumns)
 {

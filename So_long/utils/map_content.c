@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:39 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/17 10:39:06 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/17 14:59:31 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../So_long.h"
+#include "../includes/So_long.h"
 
 void	map_content(char **arr)
 {

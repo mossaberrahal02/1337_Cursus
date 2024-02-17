@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:50 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/17 11:11:33 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/17 14:59:31 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../So_long.h"
+#include "../includes/So_long.h"
 
 void	map_h_w_checkwidth(char *line, int fd, t_hw *nbr)
 {

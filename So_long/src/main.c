@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:23:36 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/17 13:02:26 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/17 15:01:46 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "So_long.h"
+#include "../includes/So_long.h"
 
 int	main(int ac, char *av[])
 {

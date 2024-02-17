@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:24:41 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/17 13:17:55 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/17 14:59:31 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../So_long.h"
+#include "../includes/So_long.h"
 
 char	**dup_map(char *path, size_t nbr_lines)
 {

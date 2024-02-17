@@ -9,7 +9,7 @@ LIBA_GNL = libs/get_next_line/gnl.a
 LIBS = -lmlx -framework OpenGL -framework Appkit
 
 
-SRC_FILES = main.c libs/ft_printf/ft_printf.c libs/ft_printf/ft_put_adress.c libs/ft_printf/ft_put_hexdeci_lc.c libs/ft_printf/ft_put_hexdeci_uc.c \
+SRC_FILES = src/main.c libs/ft_printf/ft_printf.c libs/ft_printf/ft_put_adress.c libs/ft_printf/ft_put_hexdeci_lc.c libs/ft_printf/ft_put_hexdeci_uc.c \
 libs/ft_printf/ft_put_unsigned_decimal.c libs/ft_printf/ft_putchar.c libs/ft_printf/ft_putnbr.c libs/ft_printf/ft_putstr.c \
 libs/get_next_line/get_next_line.c libs/get_next_line/get_next_line_utils.c \
 libs/libft/ft_atoi.c libs/libft/ft_bzero.c libs/libft/ft_calloc.c libs/libft/ft_isalnum.c libs/libft/ft_isalpha.c libs/libft/ft_isascii.c libs/libft/ft_putchar_fd.c libs/libft/ft_itoa.c \
@@ -25,7 +25,7 @@ all: ${NAME}
 
 ${NAME}: ${OBJ_FILES}
 	ar rc ${ARCHIVE} $?
-	${CC} ${FLAGS} main.c -o ${NAME} ${LIBS} ${ARCHIVE}
+	${CC} ${FLAGS} src/main.c -o ${NAME} ${LIBS} ${ARCHIVE}
 
 %.o:%.c
 	${CC} ${FLAGS} -c $^ -o $@

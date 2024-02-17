@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:30 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/16 20:28:01 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/17 14:59:31 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../So_long.h"
+#include "../includes/So_long.h"
 
 int	map_checker(char *path)
 {

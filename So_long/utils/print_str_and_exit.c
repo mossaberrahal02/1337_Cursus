@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:26:20 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/15 17:39:59 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/17 15:00:38 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libs/ft_printf/ft_printf.h"
+#include "../includes/So_long.h"
 
 void	print_str_and_exit(const char *str)
 {

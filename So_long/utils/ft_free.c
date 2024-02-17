@@ -6,19 +6,18 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 10:52:11 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/17 13:48:34 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/17 14:59:31 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../So_long.h"
+#include "../includes/So_long.h"
 
 void ft_freee(char **arr)
 {
-
 	int i;
 
 	i = 0;
-	while(arr[i]!=NULL)
+	while(arr[i])
 	{
 		free(arr[i]);
 		i++;
