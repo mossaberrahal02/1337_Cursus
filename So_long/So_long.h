@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   So_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/16 16:01:51 by merrahal          #+#    #+#             */
+/*   Updated: 2024/02/17 11:45:56 by merrahal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -16,8 +28,6 @@
 // used functions
 int			ft_printf(const char *str, ...);
 
-
-
 typedef struct s_xy
 {
 	int		x;
@@ -28,9 +38,9 @@ typedef struct s_mc
 {
 	int		i;
 	int		j;
-	int		E;
-	int		C;
-	int		P;
+	int		e;
+	int		c;
+	int		p;
 }			t_mc;
 
 typedef struct s_mlx
@@ -43,90 +53,21 @@ typedef struct s_hw
 {
 	size_t	nbr_h_map;
 	size_t	nbr_w_map;
-} 			t_hw;                                                                      
-
+}			t_hw;
 
 // utils
+void		ft_freee(char **arr);
 void		print_str_and_exit(const char *str);
 char		**dup_map(char *path, size_t nbr_lines);
-void 		flood_fill(char **arr, size_t x, size_t y, t_hw *nbr);
+void		flood_fill(char **arr, size_t x, size_t y, t_hw *nbr);
 size_t		ft_strlen_no_new_line(const char *str);
 int			has_only_walls(char **arr, size_t nbr_lines, size_t nbr_collumns);
 int			map_checker(char *path);
 void		map_content(char **arr);
-void 		map_h_w_checkWidth(char *line, int fd, t_hw *nbr);
-void 		map(char *path, t_hw *nbr);
+void		map_h_w_checkwidth(char *line, int fd, t_hw *nbr);
+void		map(char *path, t_hw *nbr);
 void		path_checker(char *path);
 void		player_xy(char **arr, t_xy *player);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-typedef struct s_img
-{
-	void	*img;
-	int *addr; // this was a char* and i think this should be int*
-	/*
-		Now the important part :
-		mlx_get_data_addr will return a char* that is 4 times the (width
-			* height) of your image.
-		Why so ? Let me explain : This char* will represent your image,
-			pixel by pixel,
-		and the values of this array are the colors. That's why the array is 4 times bigger :
-		you need 4 char to code the color of each pixels (one for Red,
-			Green and Blue) and one for the alpha.
-		But... it's not very convenient,
-			right ? So here is my little trick : you cast
-		mlx_get_data_addr as an int* and store it in an int*.
-		This way, the array will have the exact same size as your window,
-			and each index
-		will represent one complete color of a pixel !
-	*/   /*!!!!!!!!!!!       //img.addr = (int *)mlx_get_data_addr(img.img,
-			&img.bits_per_pixel, &img.line_length,
-			&img.endian);// check the header to understand why i cast!!!!!*/
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}			t_img;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #endif
