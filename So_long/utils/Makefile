@@ -1,7 +1,7 @@
 NAME		= utils.a
 CFLAGS		= -Wall -Werror -Wextra
 FILES		= dup_map.c flood_fill.c ft_strlen_no_new_line.c has_only_walls.c map_checker.c \
-map_content.c map_h_w_checkWidth.c map.c path_checker.c player_xy.c print_str_and_exit.c
+map_content.c map_h_w_checkWidth.c map.c path_checker.c player_xy.c print_str_and_exit.c ft_freee.c
 OBJ			= $(FILES:.c=.o)
 CC 			= cc
 

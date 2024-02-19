@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:01:51 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/17 15:04:39 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/19 17:38:46 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
 
-// used functions
+// libs
 int			ft_printf(const char *str, ...);
 
 typedef struct s_xy
@@ -68,6 +68,5 @@ void		map_h_w_checkwidth(char *line, int fd, t_hw *nbr);
 void		map(char *path, t_hw *nbr);
 void		path_checker(char *path);
 void		player_xy(char **arr, t_xy *player);
-
 
 #endif
