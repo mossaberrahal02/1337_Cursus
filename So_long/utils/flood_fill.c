@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:00 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/17 14:59:31 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/19 23:15:04 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	flood_fill(char **arr, size_t x, size_t y, t_hw *nbr)
 {
-	if (x < 0 || y < 0 || x >= nbr->nbr_h_map || y >= nbr->nbr_w_map)// check wach >= wla ghir > ????
+	if (x < 0 || y < 0 || x >= nbr->nbr_h_map || y >= nbr->nbr_w_map)
 		return ;
-	if (arr[x][y] == '0' || arr[x][y] == 'E' || arr[x][y] == 'C'
+	if (arr[x][y] == '0' || arr[x][y] == 'C'
 		|| arr[x][y] == 'P')
 	{
 		arr[x][y] = 'X';
