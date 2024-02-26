@@ -36,9 +36,11 @@ clean:
 fclean: clean
 	rm -f ${NAME}
 	rm -f ${ARCHIVE}
-
 re: fclean all
 
+# should be removed
+mlxx:
+	cc ${FLAGS} ${LIBS} mlx/mlx.c -o mlxxxx
 git :
 	git add ../so_long/
 	git commit -m "so_long"

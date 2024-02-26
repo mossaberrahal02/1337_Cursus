@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:57 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/19 23:11:03 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/24 14:01:57 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	map(char *path, t_hw *nbr)
 	int		i;
 	int		j;
 
-	arr = dup_map(path, nbr->nbr_h_map);
-	arr2 = dup_map(path, nbr->nbr_h_map);
+	arr = dup_map(path);
+	arr2 = dup_map(path);
 	//added
 	// char **arr3 = dup_map(path, nbr->nbr_h_map);
 	map_content(arr);

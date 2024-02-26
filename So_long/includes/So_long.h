@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:01:51 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/19 17:38:46 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/26 10:41:35 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// constants values
-# define WIN_WIDTH 800
-# define WIN_HEIGHT 600
+// const values
+# define HW_IMAGE 50
+
 
 // libs
 int			ft_printf(const char *str, ...);
@@ -43,22 +43,30 @@ typedef struct s_mc
 	int		p;
 }			t_mc;
 
-typedef struct s_mlx
-{
-	void	*mlx;
-	void	*win;
-}			t_mlx;
-
 typedef struct s_hw
 {
 	size_t	nbr_h_map;
 	size_t	nbr_w_map;
 }			t_hw;
 
+typedef	struct s_mlx_data
+{
+	void	*mlx_ptr;
+	void	*win_ptr;
+	void		*img_ptr;
+	int			img_size;
+	int			fd;
+	int			can_exit;
+	size_t		mv_count;
+	char		**door;
+	char		**wall;
+	char		**map;
+} t_mlx_data;
+
 // utils
 void		ft_freee(char **arr);
 void		print_str_and_exit(const char *str);
-char		**dup_map(char *path, size_t nbr_lines);
+char		**dup_map(char *path);
 void		flood_fill(char **arr, size_t x, size_t y, t_hw *nbr);
 size_t		ft_strlen_no_new_line(const char *str);
 int			has_only_walls(char **arr, size_t nbr_lines, size_t nbr_collumns);

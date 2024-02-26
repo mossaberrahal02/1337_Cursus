@@ -6,20 +6,26 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:23:36 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/18 14:21:45 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/26 10:39:10 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/So_long.h"
 
+void display_windows(t_mlx_data *data)
+{
+	
+}
+
 int	main(int ac, char *av[])
 {
-	// t_mlx   data;
+	t_mlx_data   data;
 	// t_img   img;//useles till now
 	if (ac == 2)
 	{
 		map_checker(av[1]);
 		ft_printf("\nmap hiyaaa hadik\n");
+		display_windows(&data);
 	}
 	else
 		print_str_and_exit("many or less main arguments");
