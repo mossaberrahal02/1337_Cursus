@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:23:36 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/01 09:39:40 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/01 14:30:05 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,92 @@ int		count_collect(char **map)
 	return (mc.c);
 }
 
+void left(t_mlx_data *data)
+{
+	if(data->map[data->p_position.x][(data->p_position.y) - 1] == '0' || data->map[data->p_position.x][(data->p_position.y) - 1] == 'C')
+	{
+		(data->nbr_moves)++;
+		ft_printf("%d", data->nbr_moves);
+		if(data->map[data->p_position.x][(data->p_position.y) - 1] == 'C')
+			(data->nbr_collect)--;
+		data->map[data->p_position.x][(data->p_position.y) - 1] = 'P';
+		data->map[data->p_position.x][(data->p_position.y)] = '0';
+		(data->p_position.y)--;
+	}
+	else if (data->map[data->p_position.x][(data->p_position.y) - 1] == 'E'){
+		// should quite in clean way bcs the player arrived to the exit point
+		if(!(data->nbr_collect)){
+			printf("you won\n");
+			system("leaks so_long");
+			exit(0);
+		}
+	}
+}
+
+void right(t_mlx_data *data)
+{
+	if(data->map[data->p_position.x][(data->p_position.y) + 1] == '0' || data->map[data->p_position.x][(data->p_position.y) + 1] == 'C')
+	{
+		(data->nbr_moves)++;
+		ft_printf("%d", data->nbr_moves);
+		if(data->map[data->p_position.x][(data->p_position.y) + 1] == 'C')
+			(data->nbr_collect)--;
+		data->map[data->p_position.x][(data->p_position.y) + 1] = 'P';
+		data->map[data->p_position.x][(data->p_position.y)] = '0';
+		(data->p_position.y)++;
+	}
+	else if (data->map[data->p_position.x][(data->p_position.y) + 1] == 'E'){
+		// should quite in clean way bcs the player arrived to the exit point
+		if(!(data->nbr_collect)){
+			printf("you won\n");
+			system("leaks so_long");
+			exit(0);
+		}
+	}
+}
+
 void up(t_mlx_data *data)
 {
+	if(data->map[(data->p_position.x) - 1][(data->p_position.y)] == '0' || data->map[(data->p_position.x) - 1][(data->p_position.y)] == 'C')
+	{
+		(data->nbr_moves)++;
+		ft_printf("%d", data->nbr_moves);
+		if(data->map[(data->p_position.x) - 1][(data->p_position.y)] == 'C')
+			(data->nbr_collect)--;
+		data->map[(data->p_position.x) - 1][(data->p_position.y)] = 'P';
+		data->map[(data->p_position.x)][(data->p_position.y)] = '0';
+		(data->p_position.x)--;
+	}
+	else if (data->map[(data->p_position.x) - 1][(data->p_position.y)] == 'E'){
+		// should quite in clean way bcs the player arrived to the exit point
+		if(!(data->nbr_collect)){
+			printf("you won\n");
+			system("leaks so_long");
+			exit(0);
+		}
+	}
+}
 
+void down(t_mlx_data *data)
+{
+	if(data->map[(data->p_position.x) + 1][(data->p_position.y)] == '0' || data->map[(data->p_position.x) + 1][(data->p_position.y)] == 'C')
+	{
+		(data->nbr_moves)++;
+		ft_printf("%d", data->nbr_moves);
+		if(data->map[(data->p_position.x)  + 1][(data->p_position.y)] == 'C')
+			(data->nbr_collect)--;
+		data->map[(data->p_position.x) + 1][(data->p_position.y)] = 'P';
+		data->map[(data->p_position.x)][(data->p_position.y)] = '0';
+		(data->p_position.x)++;
+	}
+	else if (data->map[(data->p_position.x) + 1][(data->p_position.y)] == 'E'){
+		// should quite in clean way bcs the player arrived to the exit point
+		if(!(data->nbr_collect)){
+			printf("you won\n");
+			system("leaks so_long");
+			exit(0);
+		}
+	}
 }
 
 int escape_udrl(int keycode, t_mlx_data *data)
@@ -122,27 +205,36 @@ int escape_udrl(int keycode, t_mlx_data *data)
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 		exit(0);
 	}
-	// else if(keycode == 0)
-	// 	left(data);
-	// else 
-	if(keycode == 13)
+	else if(keycode == 0)
+	{
+		left(data);
+		mlx_clear_window(data->mlx_ptr, data->win_ptr);
+		put_images(data);
+	}
+	else if(keycode == 2)
+	{
+		right(data);
+		mlx_clear_window(data->mlx_ptr, data->win_ptr);
+		put_images(data);
+	}
+	else if(keycode == 13)
+	{
 		up(data);
-	// else if(keycode == 1)
-	// 	down(data);
-	// else if(keycode == 2)
-	// 	right(data);
-	/*
-	A -> 0
-	W -> 13 
-	S -> 1
-	D -> 2
-	*/
+		mlx_clear_window(data->mlx_ptr, data->win_ptr);
+		put_images(data);
+	}
+	else if(keycode == 1)
+	{
+		down(data);
+		mlx_clear_window(data->mlx_ptr, data->win_ptr);
+		put_images(data);
+	}
 	return 0;
 }
 
 int mouse_exit(t_mlx_data *data)
 {
-	mlx_destroy_window(data->mlx_ptr, data->win_ptr);   ///// whyy it SEGV ????? i reduced the number of arguments and there is no more SEGV
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);   // whyy it SEGV ????? i reduced the number of arguments and there is no more SEGV
 	exit(0);
 	return(0); 
 }
@@ -157,14 +249,22 @@ void display_windows(t_mlx_data *data, char *path)
 	hw.nbr_w_map = map_w(data->map[0]);
 	data->mlx_ptr = mlx_init();
 	import_images(data, &hw);
-	data->win_ptr = mlx_new_window(data->mlx_ptr, hw.nbr_w_map * 33, hw.nbr_h_map * 33, "solong");
+	data->win_ptr = mlx_new_window(data->mlx_ptr, hw.nbr_w_map * 33, hw.nbr_h_map * 33, "So_long");
 	put_images(data);
-	data->nbr_collect = count_collect(data->map);
-	player_position(data);
+	data->nbr_collect = count_collect(data->map);// the number of collect in the first time
+	// int i = 0;
+	// while(data->map[i])
+	// 	printf("display_windows()  -> %s\n", data->map[i++]);
 	mlx_key_hook(data->win_ptr, escape_udrl, data);
 	mlx_hook(data->win_ptr, 17, 0, mouse_exit, data);
 }
-
+// int run(char *chihj)
+// {
+// 	static int x;
+// 	(void) chihj;
+// 	printf("runnnn %d\n", x++);
+// 	return x;
+// }
 int	main(int ac, char *av[])
 {
 	t_mlx_data   data;
@@ -175,7 +275,8 @@ int	main(int ac, char *av[])
 		map_checker(av[1]);
 		ft_printf("\nmap hiyaaa hadik\n");
 		display_windows(&data, av[1]);
-	mlx_loop(data.mlx_ptr);
+		// mlx_loop_hook(data.mlx_ptr, &run, NULL);   //i'll see it
+		mlx_loop(data.mlx_ptr);
 	}
 	else
 		print_str_and_exit("many or less main arguments");

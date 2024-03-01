@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:01:51 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/29 18:13:43 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/01 14:22:00 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef	struct s_mlx_data
 	char	*path;
 	char	**map;
 	int		nbr_collect;
+	int		nbr_moves;
 	t_imgs	pers_images;
 	t_xy	p_position;
 } t_mlx_data;
