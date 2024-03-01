@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:01:51 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/26 10:41:35 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/29 18:13:43 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 # define HW_IMAGE 50
 
 
-// libs
 int			ft_printf(const char *str, ...);
 
 typedef struct s_xy
@@ -45,31 +44,39 @@ typedef struct s_mc
 
 typedef struct s_hw
 {
-	size_t	nbr_h_map;
-	size_t	nbr_w_map;
+	int	nbr_h_map;
+	int	nbr_w_map;
+	int	nbr_h_img;
+	int	nbr_w_img;
 }			t_hw;
+
+typedef struct s_imgs
+{
+	void	*c_img;
+	void	*p_img;
+	void	*img_0;
+	void	*img_1;
+	void	*e_img;
+}			t_imgs;
 
 typedef	struct s_mlx_data
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
-	void		*img_ptr;
-	int			img_size;
-	int			fd;
-	int			can_exit;
-	size_t		mv_count;
-	char		**door;
-	char		**wall;
-	char		**map;
+	char	*path;
+	char	**map;
+	int		nbr_collect;
+	t_imgs	pers_images;
+	t_xy	p_position;
 } t_mlx_data;
 
 // utils
 void		ft_freee(char **arr);
 void		print_str_and_exit(const char *str);
 char		**dup_map(char *path);
-void		flood_fill(char **arr, size_t x, size_t y, t_hw *nbr);
-size_t		ft_strlen_no_new_line(const char *str);
-int			has_only_walls(char **arr, size_t nbr_lines, size_t nbr_collumns);
+void		flood_fill(char **arr, int x, int y, t_hw *nbr);
+int			ft_strlen_no_new_line(const char *str);
+int			has_only_walls(char **arr, int nbr_lines, int nbr_collumns);
 int			map_checker(char *path);
 void		map_content(char **arr);
 void		map_h_w_checkwidth(char *line, int fd, t_hw *nbr);

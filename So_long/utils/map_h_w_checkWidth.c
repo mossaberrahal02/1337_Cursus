@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:50 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/18 14:22:23 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/29 10:12:38 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	map_h_w_checkwidth(char *line, int fd, t_hw *nbr)
 {
-	size_t	height;
+	int	height;
 
 	height = 1;
 	free(line);

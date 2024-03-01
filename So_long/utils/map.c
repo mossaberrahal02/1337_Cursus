@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:57 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/24 14:01:57 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/27 13:12:56 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ void	map(char *path, t_hw *nbr)
 	while (arr2[++i] != NULL)
 	{
 		j = 0;
-		printf("-->%s\n", arr2[i]);
+		// printf("-->%s\n", arr2[i]);
 		while (arr2[i][j])
 		{
-			if (arr2[i][j] == 'C' || arr2[i][j] == 'P')
-				print_str_and_exit("invalid map (chi c maghadich yakolha P)");
+			if (arr2[i][j] == 'C' || arr2[i][j] == 'P' || arr2[i][j] == 'E')
+				print_str_and_exit("invalid map (chi c maghadich yakolha P) wla ma ghadich yewsel E");
 			j++;
 		}
 	}

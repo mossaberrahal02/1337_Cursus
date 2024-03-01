@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:12:55 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/20 22:03:11 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/26 15:24:49 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,13 +78,11 @@ static int	ft_fill(char **allocatedArray, char const *givenString,
 char	**ft_split(char const *s, char c)
 {
 	char	**splited;
-	int		i;
 	int		words;
 
 	if (!s)
 		return (NULL);
 	words = ft_countwords((char *)s, c);
-	i = 0;
 	splited = (char **)malloc((words + 1) * sizeof(char *));
 	if (!splited)
 		return (NULL);
@@ -93,26 +91,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (splited);
 }
-// int	main(void)
-// {
-// // 	//---------testing split--------//
-
-// // 	//char *str = "   mossaberrahal   -0-6  haha";
-// // 	// char *str2 = "";
-// // 	char **splited = ft_split(str, ' ');
-// // 	// if(splited == NULL)
-// // 	// 	printf("NULL");
-// // 	// while(*splited)
-// // 	// 	printf("%s \n",*(splited++));
-// // 	int i = -1;
-// // 	int j = -1;
-// // 	while(splited[++i])
-// // 	{
-// // 		j = 0;
-// // 		while(splited[i][j])
-// // 			printf("%c",splited[i][j++]);
-// // 	}
-// char **test = ft_split(NULL, ' ');
-// if (test)
-// printf("%s", test[0]);
-// }

@@ -6,15 +6,15 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:21 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/17 14:59:31 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/26 18:28:33 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/So_long.h"
 
-int	has_only_walls(char **arr, size_t nbr_lines, size_t nbr_collumns)
+int	has_only_walls(char **arr, int nbr_lines, int nbr_collumns)
 {
-	size_t	i;
+	int	i;
 
 	i = -1;
 	while ((++i < ft_strlen_no_new_line(arr[0])))

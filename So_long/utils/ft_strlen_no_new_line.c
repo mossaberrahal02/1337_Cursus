@@ -6,15 +6,15 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:13 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/17 14:59:31 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/02/29 10:12:59 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/So_long.h"
 
-size_t	ft_strlen_no_new_line(const char *str)
+int	ft_strlen_no_new_line(const char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (str[i] && str[i] != '\n')

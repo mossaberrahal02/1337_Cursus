@@ -25,7 +25,7 @@ all: ${NAME}
 
 ${NAME}: ${OBJ_FILES}
 	ar rc ${ARCHIVE} $?
-	${CC} ${FLAGS} src/main.c -o ${NAME} ${LIBS} ${ARCHIVE}
+	${CC} ${FLAGS} src/main.c -o ${NAME} ${LIBS} ${ARCHIVE} -fsanitize=address -g3
 
 %.o:%.c
 	${CC} ${FLAGS} -c $^ -o $@
