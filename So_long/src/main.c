@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:23:36 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/01 14:30:05 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/01 23:12:04 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,30 +200,31 @@ void down(t_mlx_data *data)
 
 int escape_udrl(int keycode, t_mlx_data *data)
 {
-	if(keycode == 53)
+	// printf("--->%d\n", keycode);
+	if(keycode == 65307)
 	{
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 		exit(0);
 	}
-	else if(keycode == 0)
+	else if(keycode == 97)
 	{
 		left(data);
 		mlx_clear_window(data->mlx_ptr, data->win_ptr);
 		put_images(data);
 	}
-	else if(keycode == 2)
+	else if(keycode == 100)
 	{
 		right(data);
 		mlx_clear_window(data->mlx_ptr, data->win_ptr);
 		put_images(data);
 	}
-	else if(keycode == 13)
+	else if(keycode == 119)
 	{
 		up(data);
 		mlx_clear_window(data->mlx_ptr, data->win_ptr);
 		put_images(data);
 	}
-	else if(keycode == 1)
+	else if(keycode == 115)
 	{
 		down(data);
 		mlx_clear_window(data->mlx_ptr, data->win_ptr);

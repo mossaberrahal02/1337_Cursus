@@ -27,4 +27,3 @@ git :
 	git add ../libft/
 	git commit -m "libft"
 	git push
-

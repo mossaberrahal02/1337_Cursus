@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:01:51 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/01 14:22:00 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 15:10:17 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 # include "../libs/ft_printf/ft_printf.h"
 # include "../libs/get_next_line/get_next_line.h"
 # include "../libs/libft/libft.h"
-# include <mlx.h>
+#include <X11/keysym.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <mlx.h>
 
 // const values
 # define HW_IMAGE 50
@@ -76,6 +77,7 @@ void		ft_freee(char **arr);
 void		print_str_and_exit(const char *str);
 char		**dup_map(char *path);
 void		flood_fill(char **arr, int x, int y, t_hw *nbr);
+void		flood_fill_e(char **arr, int x, int y, t_hw *nbr);
 int			ft_strlen_no_new_line(const char *str);
 int			has_only_walls(char **arr, int nbr_lines, int nbr_collumns);
 int			map_checker(char *path);

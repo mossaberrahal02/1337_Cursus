@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:32:21 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/15 17:56:10 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 15:54:13 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <limits.h>
+#include <stdint.h>
 
 // Libc functions
 //#ifndef LIBFT_H include guards This ensures that 
