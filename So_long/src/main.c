@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:23:36 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 17:44:08 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 21:21:10 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ int	map_w(char *line_map)
 
 void	import_images(t_mlx_data *data, t_hw *hw)
 {
-	// data->pers_images.img_0 = mlx_xpm_file_to_image(data->mlx_ptr,
-			// "./textures/mazal.xpm", &(hw->nbr_w_img), &(hw->nbr_h_img));
-	// if(!(data->pers_images.img_0))
-	// 	print_str_and_exit("data->pers_images.img_0 is null");
 	data->pers_images.img_1 = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./textures/Wall.xpm", &(hw->nbr_w_img), &(hw->nbr_h_img));
 	if (!(data->pers_images.img_1))
@@ -130,7 +126,7 @@ void	left(t_mlx_data *data)
 		|| data->map[data->p_position.x][(data->p_position.y) - 1] == 'C')
 	{
 		(data->nbr_moves)++;
-		ft_printf("%d", data->nbr_moves);
+		ft_printf("%d\n", data->nbr_moves);
 		if (data->map[data->p_position.x][(data->p_position.y) - 1] == 'C')
 			(data->nbr_collect)--;
 		data->map[data->p_position.x][(data->p_position.y) - 1] = 'P';
@@ -155,7 +151,7 @@ void	right(t_mlx_data *data)
 		|| data->map[data->p_position.x][(data->p_position.y) + 1] == 'C')
 	{
 		(data->nbr_moves)++;
-		ft_printf("%d", data->nbr_moves);
+		ft_printf("%d\n", data->nbr_moves);
 		if (data->map[data->p_position.x][(data->p_position.y) + 1] == 'C')
 			(data->nbr_collect)--;
 		data->map[data->p_position.x][(data->p_position.y) + 1] = 'P';
@@ -180,7 +176,7 @@ void	up(t_mlx_data *data)
 		|| data->map[(data->p_position.x) - 1][(data->p_position.y)] == 'C')
 	{
 		(data->nbr_moves)++;
-		ft_printf("%d", data->nbr_moves);
+		ft_printf("%d\n", data->nbr_moves);
 		if (data->map[(data->p_position.x) - 1][(data->p_position.y)] == 'C')
 			(data->nbr_collect)--;
 		data->map[(data->p_position.x) - 1][(data->p_position.y)] = 'P';
@@ -205,7 +201,7 @@ void	down(t_mlx_data *data)
 		|| data->map[(data->p_position.x) + 1][(data->p_position.y)] == 'C')
 	{
 		(data->nbr_moves)++;
-		ft_printf("%d", data->nbr_moves);
+		ft_printf("%d\n", data->nbr_moves);
 		if (data->map[(data->p_position.x) + 1][(data->p_position.y)] == 'C')
 			(data->nbr_collect)--;
 		data->map[(data->p_position.x) + 1][(data->p_position.y)] = 'P';
@@ -227,10 +223,6 @@ void	down(t_mlx_data *data)
 void clear_put_window(t_mlx_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	free(data->pers_images.c_img);
-	free(data->pers_images.e_img);
-	free(data->pers_images.img_1);
-	free(data->pers_images.p_img);
 	put_images(data);
 }
 void uldr(int keycode, t_mlx_data *data)
@@ -262,11 +254,6 @@ int	escape_udrl(int keycode, t_mlx_data *data)
 	if (keycode == 65307)
 	{
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-		ft_freee(data->map);
-		free(data->pers_images.c_img);
-		free(data->pers_images.e_img);
-		free(data->pers_images.img_1);
-		free(data->pers_images.p_img);
 		exit(0);
 	}
 	else
@@ -277,11 +264,6 @@ int	escape_udrl(int keycode, t_mlx_data *data)
 int	mouse_exit(t_mlx_data *data)
 {
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-	ft_freee(data->map);
-	free(data->pers_images.c_img);
-	free(data->pers_images.e_img);
-	free(data->pers_images.img_1);
-	free(data->pers_images.p_img);
 	exit(0);
 	return (0);
 }
@@ -317,7 +299,6 @@ int	main(int ac, char *av[])
 	}
 	else
 		print_str_and_exit("many or less main arguments");
-	ft_freee(data.map);
-	system("leaks so_long");
+	// system("leaks so_long");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:01:51 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 16:53:41 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 21:21:31 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ typedef struct s_imgs
 {
 	void	*c_img;
 	void	*p_img;
-	void	*img_0;
 	void	*img_1;
 	void	*e_img;
 }			t_imgs;
