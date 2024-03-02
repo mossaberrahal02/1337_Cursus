@@ -6,11 +6,11 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:39:16 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 16:01:52 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:17:15 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include "libft.h"
 
 void	ft_putnbr_fd(int nb, int fd)
 {
