@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/So_long.h" 
+#include "../includes/So_long.h"
 
-static int nbr_lines(char *path)
+static int	nbr_lines(char *path)
 {
-	int fd;
-	int h;
-	char *line;
+	int		fd;
+	int		h;
+	char	*line;
 
 	h = 1;
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
 		print_str_and_exit("ma thelch l file dyal l map men l fnc dup_map()");
 	line = get_next_line(fd);
-	if(!line)
+	if (!line)
 		return (0);
 	while (line)
 	{
