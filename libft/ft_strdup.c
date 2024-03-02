@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 00:21:37 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/22 12:00:00 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:02:10 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,3 @@ char	*ft_strdup(const char *s1)
 	dup[i] = '\0';
 	return (dup);
 }
-/*
-int	main(void)
-{
-	char *s = ft_strdup(NULL);
-	printf("----> %s\n", s);
-
-	// char *d = strdup(NULL);
-	// printf("----> %s\n", d);
-}*/

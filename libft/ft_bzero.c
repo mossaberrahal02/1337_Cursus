@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 21:40:29 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/19 20:59:23 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:00:39 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-// int main()
-// {
-// 	int tab[] = {1,2,3,4,5,6,7,8};
-// 	for(int i =0 ; i < 8 ; i++)
-// 		printf("%d\n", tab[i]);
-// 	ft_bzero(tab, -5);
-// 	printf("-----------------------\n");
-// 	for(int i =0 ; i < 8 ; i++)
-// 		printf("%d\n", tab[i]);
-
-// 	// int tab2[] = {1,2,3,4,5,6,7,8};
-// 	// for(int i =0 ; i < 8 ; i++)
-// 	// 	printf("%d\n", tab2[i]);
-// 	// bzero(tab2, -5);
-// 	// printf("-----------------------\n");
-// 	// for(int i =0 ; i < 8 ; i++)
-// 	// 	printf("%d\n", tab2[i]);
-// }

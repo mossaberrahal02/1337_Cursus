@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:45:43 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/13 01:15:48 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:02:56 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[j] = '\0';
 	return (substr);
 }
-
-// int main(){
-// char str[] = "i just want this part #############";
-// size_t size = -5;
-
-// printf("%s\n", ft_substr("a", 9,5));
-
-// printf("%zu\n", size);
-
-// char *s = ft_strdup("");
-// free(s);

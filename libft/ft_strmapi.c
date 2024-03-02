@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:11:58 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/29 09:57:09 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:02:33 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	allocated[i] = '\0';
 	return (allocated);
 }
-// char ttto_upper(unsigned int i, char c)
-// {
-// 	(void)i;
-// 	if (c <= 122 && c >= 97)
-// 		c -= 32;
-// 	return(c);
-// }
-// int main()
-// {
-// 	char * tab = ft_strmapi("mossab", NULL);
-// 	printf("%s\n", tab);
-// }

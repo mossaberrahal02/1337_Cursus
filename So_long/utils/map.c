@@ -6,67 +6,69 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:57 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/27 13:12:56 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 22:25:03 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/So_long.h"
 
-// static void flood_fill2(char **arr, size_t x, size_t y, t_hw *nbr)
-// {
-// 	if (x < 0 || y < 0 || x >= nbr->nbr_h_map || y >= nbr->nbr_w_map)
-// 		return ;
-// 	if (arr[x][y] == '0'|| arr[x][y] == 'C'
-// 		|| arr[x][y] == 'P')
-// 	{
-// 		arr[x][y] = 'X';
-// 		flood_fill2(arr, x + 1, y, nbr);
-// 		flood_fill2(arr, x - 1, y, nbr);
-// 		flood_fill2(arr, x, y + 1, nbr);
-// 		flood_fill2(arr, x, y - 1, nbr);
-// 	}
-// }
+void	check_c_p(char **arr2)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (arr2[++i] != NULL)
+	{
+		j = 0;
+		while (arr2[i][j])
+		{
+			if (arr2[i][j] == 'C' || arr2[i][j] == 'P')
+				print_str_and_exit("invalid map (chi c maghadich yakolha P)");
+			j++;
+		}
+	}
+}
+
+void	check_e(char **arr2)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (arr2[++i] != NULL)
+	{
+		j = 0;
+		while (arr2[i][j])
+		{
+			if (arr2[i][j] == 'E')
+				print_str_and_exit("invalid map (E is surrunded by walls)");
+			j++;
+		}
+	}
+}
 
 void	map(char *path, t_hw *nbr)
 {
 	char	**arr;
 	char	**arr2;
 	t_xy	player;
-	int		i;
-	int		j;
 
 	arr = dup_map(path);
 	arr2 = dup_map(path);
-	//added
-	// char **arr3 = dup_map(path, nbr->nbr_h_map);
 	map_content(arr);
 	has_only_walls(arr, nbr->nbr_h_map - 1, nbr->nbr_w_map);
 	player_xy(arr, &player);
-	
-	
-	// flood_fill2(arr3, player.x, player.y, nbr);
-
-	
+	int i = -1;
 	flood_fill(arr2, player.x, player.y, nbr);
-	//added
-	// int x = 0;
-	// while (arr3[x])
-	// {
-	// 	printf("arr3[%d]=== --> %s\n", x, arr3[x]);
-	// 	x++;
-	// }
+	while(arr2[++i])
+		printf("1)%s\n", arr2[i]);
+	check_0_c_p(arr2);
+	flood_fill_e(arr2, player.x, player.y, nbr);
 	i = -1;
-	while (arr2[++i] != NULL)
-	{
-		j = 0;
-		// printf("-->%s\n", arr2[i]);
-		while (arr2[i][j])
-		{
-			if (arr2[i][j] == 'C' || arr2[i][j] == 'P' || arr2[i][j] == 'E')
-				print_str_and_exit("invalid map (chi c maghadich yakolha P) wla ma ghadich yewsel E");
-			j++;
-		}
-	}
+	while(arr2[++i])
+	printf("2)%s\n", arr2[i]);
+	check_e(arr2);
 	ft_freee(arr2);
 	ft_freee(arr);
 }

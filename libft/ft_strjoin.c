@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 21:55:10 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/21 14:55:48 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:02:19 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	concat[i] = '\0';
 	return (concat);
 }
-/*
-int	main()
-{
-	char	*s1;
-	char	*s2;
-	char	*str;
-
-	s1 = "tripouille";
-	s2 = "42";
-	str = ft_strjoin(NULL, NULL);
-	printf("%s",str);
-	while(*str)
-	{
-		printf("%c", *str);
-		str++;
-	}
-	printf("\n");
-}
-*/

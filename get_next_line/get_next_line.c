@@ -1,4 +1,3 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
@@ -6,7 +5,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:42:50 by merrahal          #+#    #+#             */
-/*   Updated: 2024/01/12 16:37:35 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:21:14 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +102,8 @@ int main()
 
 
 char *s1 =  get_next_line(fd1);
+char*s2 = NULL;
+printf("%c",*s2);
 
 // 	printf("\n---fd3--> %s",s1);//abcd2
 // 	free(s1);
@@ -120,5 +121,5 @@ char *s1 =  get_next_line(fd1);
 		free(s1);
 		s1 = get_next_line(fd1);
 	}
-	system("leaks a.out");
+	//system("leaks a.out");
 }

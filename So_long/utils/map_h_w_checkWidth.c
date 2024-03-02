@@ -32,6 +32,6 @@ void	map_h_w_checkwidth(char *line, int fd, t_hw *nbr)
 	}
 	free(line);
 	nbr->nbr_h_map = height;
-	if(nbr->nbr_h_map > nbr->nbr_w_map)
+	if (nbr->nbr_h_map > nbr->nbr_w_map)
 		print_str_and_exit("map is not rectangular");
 }

@@ -5,6 +5,9 @@
         "libft.h": "c",
         "fcntl.h": "c",
         "mlx.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "limits.h": "c",
+        "unistd.h": "c",
+        "stdlib.h": "c"
     }
 }
