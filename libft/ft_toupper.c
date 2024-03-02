@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 05:57:53 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/13 01:11:33 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:03:04 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,3 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
-/*int main()
-{
-// 	unsigned char a = 376;
-// 	printf("%c\n", a);
-// 	return (0);
-	printf("%c",ft_toupper(114));
-}*/

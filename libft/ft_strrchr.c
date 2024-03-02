@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 20:25:36 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/21 22:59:08 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:02:44 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)&s[ft_strlen(s)]);
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	char str[50] = "";
-	printf("dyali --->%s\n", ft_strrchr(str, 1024)); 1024 010000000000000000
-	printf("dyalhom --->%s\n", strrchr(str, 'a'));
-}*/

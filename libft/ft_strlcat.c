@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:41:32 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/21 14:56:51 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:02:22 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	dest[dlen + i] = '\0';
 	return (dlen + slen);
 }
-
-// DSTSIZE + SLEN IS   ----> the size that should be given 
-//to the function to work properly
-// int	main(void)
-// {
-
-// 	// char *src = "abcdefghi";
-// 	char dest[14] = "pqrs";
-// 	//printf("%zu\n",ft_strlcat((void *)0 ,"hello",5));
-
-// 	// printf("%zu\n",ft_strlcat( dest, NULL, 17));
-// 	printf("%zu\n",strlcat( dest, NULL, 14));
-// 	//printf("%s", dest1);
-// }

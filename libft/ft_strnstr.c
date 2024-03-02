@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 22:58:13 by merrahal          #+#    #+#             */
-/*   Updated: 2023/11/21 18:57:53 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:02:40 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,3 @@ char	*ft_strnstr(const char *str, const char *tofind, size_t len)
 	}
 	return (0); // <---- type caste to char * ??
 }
-/*
-int	main(void){
-	const char *str = "hello";
-	const char *tofind = "t";
-	printf("dyali --> %s\n",ft_strnstr(str,tofind,ft_strlen(tofind)));
-	printf("dyalhom --> %s",strnstr(str,tofind,strlen(tofind)));
-}*/

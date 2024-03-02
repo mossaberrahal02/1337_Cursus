@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 21:08:00 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/05 17:48:10 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:01:10 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,3 @@ char	*ft_itoa(int n)
 		ft_fill(allocated, len_of_number, n);
 	return (allocated);
 }
-
-// int main()
-// {
-//     // printf("%s\n", ft_itoa(-9));
-//     printf("%d\n", -3%10);
-//     // printf("%d", INT_MIN);
-// }

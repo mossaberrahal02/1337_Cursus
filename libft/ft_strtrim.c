@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 01:18:11 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/05 17:50:58 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:02:49 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,37 +30,3 @@ char	*ft_strtrim(char const *s, char const *set)
 	}
 	return (ft_substr(s, start, end - start));
 }
-/*
-int	main(void){
-	//char *str = "abbabhaabbmmjookmom";
-	char *str1 = "____hello, worold_,,,,";
-	char *set1 = "_, ";
-	ft_strtrim(str1, set1);
-	printf("str1 = ____hello, worold_,,,,  && set1 =  "_,
-		"%s\n",ft_strtrim(str1, set1));
-
-	char *str2 = "____,,,,";
-	char *set2 = "_, ";
-	ft_strtrim(str2, set2);
-	printf("%s\n",ft_strtrim(str2, set2));
-
-	char *str3 = "";
-	char *set3 = "_, ";
-	ft_strtrim(str3, set3);
-	printf("%s\n",ft_strtrim(str3, set3));
-
-	char *str4 = NULL;
-	char *set4 = "_, ";
-	ft_strtrim(str4, set4);
-	printf("%s\n",ft_strtrim(str4, set4));
-
-	char *str5 = "test";
-	char *set5 = NULL;
-	ft_strtrim(str5, set5);
-	printf("%s\n",ft_strtrim(str5, set5));
-
-	char *str6 = "";
-	char *set6 = "";
-	ft_strtrim(str6, set6);
-	printf("%s\n",ft_strtrim(str6, set6));
-}*/
