@@ -45,3 +45,4 @@ git :
 	git add ../so_long/
 	git commit -m "so_long"
 	git push
+.phony:

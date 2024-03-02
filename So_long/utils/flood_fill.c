@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:00 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 15:18:20 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:54:22 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	flood_fill(char **arr, int x, int y, t_hw *nbr)
 {
 	if (x < 0 || y < 0 || x >= nbr->nbr_h_map || y >= nbr->nbr_w_map)
 		return ;
-	// if (arr[x][y] == '0' || arr[x][y] == 'C' || arr[x][y] == 'P' || arr[x][y] == 'E')
 	if (arr[x][y] == '0' || arr[x][y] == 'C' || arr[x][y] == 'P')
 	{
 		arr[x][y] = 'X';
@@ -26,6 +25,7 @@ void	flood_fill(char **arr, int x, int y, t_hw *nbr)
 		flood_fill(arr, x, y - 1, nbr);
 	}
 }
+
 void	flood_fill_e(char **arr, int x, int y, t_hw *nbr)
 {
 	if (x < 0 || y < 0 || x >= nbr->nbr_h_map || y >= nbr->nbr_w_map)

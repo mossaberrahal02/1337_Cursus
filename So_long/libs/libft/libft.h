@@ -13,18 +13,18 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <fcntl.h>
+# include <limits.h>
 # include <stddef.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <limits.h>
-#include <stdint.h>
 
 // Libc functions
-//#ifndef LIBFT_H include guards This ensures that 
-//the contents of the header are included only once 
-//in each source file
+//#ifndef LIBFT_H include guards This ensures that
+// the contents of the header are included only once
+// in each source file
 //# define LIBFT_H   // avoid issues with multiple
 // definitions during the compilation process
 int		ft_isalpha(int c);
@@ -56,7 +56,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s, char const *set);
 char	**ft_split(char const *s, char c);
 void	ft_putchar_fd(char c, int fd);
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));;
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+;
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);
 void	ft_putendl_fd(char *s, int fd);

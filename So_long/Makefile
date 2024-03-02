@@ -2,7 +2,7 @@
 ARCHIVE = lib.a
 NAME = so_long
 CC = cc
-FLAGS = -Wall -Wextra #-Werror
+FLAGS = -Wall -Wextra -Werror
 
 LIBA_PRINTF = libs/ft_printf/libftprintf.a
 LIBA_LIBFT = libs/libft/libft.a
@@ -47,3 +47,4 @@ git :
 	git add ../so_long/
 	git commit -m "so_long"
 	git push
+.phony:

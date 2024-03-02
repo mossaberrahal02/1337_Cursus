@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:01:51 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 15:10:17 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:53:41 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@
 # include "../libs/ft_printf/ft_printf.h"
 # include "../libs/get_next_line/get_next_line.h"
 # include "../libs/libft/libft.h"
-#include <X11/keysym.h>
-# include <stdio.h>
+# include <X11/keysym.h>
+# include <mlx.h>
+// # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <mlx.h>
 
 // const values
 # define HW_IMAGE 50
-
 
 int			ft_printf(const char *str, ...);
 
@@ -45,10 +44,10 @@ typedef struct s_mc
 
 typedef struct s_hw
 {
-	int	nbr_h_map;
-	int	nbr_w_map;
-	int	nbr_h_img;
-	int	nbr_w_img;
+	int		nbr_h_map;
+	int		nbr_w_map;
+	int		nbr_h_img;
+	int		nbr_w_img;
 }			t_hw;
 
 typedef struct s_imgs
@@ -60,7 +59,7 @@ typedef struct s_imgs
 	void	*e_img;
 }			t_imgs;
 
-typedef	struct s_mlx_data
+typedef struct s_mlx_data
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
@@ -70,7 +69,7 @@ typedef	struct s_mlx_data
 	int		nbr_moves;
 	t_imgs	pers_images;
 	t_xy	p_position;
-} t_mlx_data;
+}			t_mlx_data;
 
 // utils
 void		ft_freee(char **arr);

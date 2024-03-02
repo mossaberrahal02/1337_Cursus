@@ -12,12 +12,12 @@
 
 #include "../includes/So_long.h"
 
-void ft_freee(char **arr)
+void	ft_freee(char **arr)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(arr[i])
+	while (arr[i])
 	{
 		free(arr[i]);
 		i++;

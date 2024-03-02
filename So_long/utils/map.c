@@ -6,16 +6,17 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:57 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 15:30:01 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:42:59 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/So_long.h"
 
-void check_0_c_p(char **arr2)
+void	check_0_c_p(char **arr2)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
+
 	i = -1;
 	while (arr2[++i] != NULL)
 	{
@@ -29,10 +30,10 @@ void check_0_c_p(char **arr2)
 	}
 }
 
-void check_e(char **arr2)
+void	check_e(char **arr2)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = -1;
 	while (arr2[++i] != NULL)
@@ -59,7 +60,6 @@ void	map(char *path, t_hw *nbr)
 	has_only_walls(arr, nbr->nbr_h_map - 1, nbr->nbr_w_map);
 	player_xy(arr, &player);
 	flood_fill(arr2, player.x, player.y, nbr);
-	//added
 	check_0_c_p(arr2);
 	flood_fill_e(arr2, player.x, player.y, nbr);
 	check_e(arr2);
