@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:01:51 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 21:21:31 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/03 15:48:41 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 # include "../libs/ft_printf/ft_printf.h"
 # include "../libs/get_next_line/get_next_line.h"
 # include "../libs/libft/libft.h"
-# include <X11/keysym.h>
 # include <mlx.h>
-// # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -84,5 +82,24 @@ void		map_h_w_checkwidth(char *line, int fd, t_hw *nbr);
 void		map(char *path, t_hw *nbr);
 void		path_checker(char *path);
 void		player_xy(char **arr, t_xy *player);
+// mlx
+int			count_collect(char **map);
+void		left(t_mlx_data *data);
+void		right(t_mlx_data *data);
+void		up(t_mlx_data *data);
+void		down(t_mlx_data *data);
+void		display_windows(t_mlx_data *data, char *path);
+void		clear_put_window(t_mlx_data *data);
+void		uldr(int keycode, t_mlx_data *data);
+int			escape_udrl(int keycode, t_mlx_data *data);
+int			mouse_exit(t_mlx_data *data);
+void		import_images(t_mlx_data *data, t_hw *hw);
+int			map_h(char **map);
+int			map_w(char *line_map);
+void		put_wall(t_mlx_data *data, int i, int j);
+void		put_collec(t_mlx_data *data, int i, int j);
+void		put_player(t_mlx_data *data, int i, int j);
+void		put_exit(t_mlx_data *data, int i, int j);
+void		put_images(t_mlx_data *data);
 
 #endif

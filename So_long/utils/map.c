@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:57 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 22:25:03 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/03 16:27:55 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,9 @@ void	map(char *path, t_hw *nbr)
 	map_content(arr);
 	has_only_walls(arr, nbr->nbr_h_map - 1, nbr->nbr_w_map);
 	player_xy(arr, &player);
-	int i = -1;
 	flood_fill(arr2, player.x, player.y, nbr);
-	while(arr2[++i])
-		printf("1)%s\n", arr2[i]);
-	check_0_c_p(arr2);
+	check_c_p(arr2);
 	flood_fill_e(arr2, player.x, player.y, nbr);
-	i = -1;
-	while(arr2[++i])
-	printf("2)%s\n", arr2[i]);
 	check_e(arr2);
 	ft_freee(arr2);
 	ft_freee(arr);

@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:25:50 by merrahal          #+#    #+#             */
-/*   Updated: 2024/02/29 10:12:38 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/02 23:32:01 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,4 @@ void	map_h_w_checkwidth(char *line, int fd, t_hw *nbr)
 	}
 	free(line);
 	nbr->nbr_h_map = height;
-	if (nbr->nbr_h_map > nbr->nbr_w_map)
-		print_str_and_exit("map is not rectangular");
 }
