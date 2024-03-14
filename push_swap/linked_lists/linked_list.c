@@ -71,12 +71,33 @@ while(tmp->next)
 }
 */
 
-
 void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-     
+    (*del)(lst->content);
+    free(lst);
 }
 
+void ft_lstclear(t_list **lst, void (*del)(void*))
+{
+    while ((*lst))
+    {
+        ft_lstdelone(lst, del);
+        (*lst)= (*lst)->next;
+    }
+}
+void ft_lstiter(t_list *lst, void (*f)(void *))
+{
+    while (lst)
+    {
+        (*f)(lst->content);
+        lst = lst->next;
+    }
+}
+
+// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+// {
+
+// }
 int	main(void)
 {
     t_list *head = NULL;

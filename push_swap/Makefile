@@ -1,10 +1,10 @@
 ARCHIVE = lib.a
 NAME = push_swap
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra #-Werror
 
 
-SRC_FILES = src/main.c \
+SRC_FILES = parsing/check_args.c \
 libs/ft_printf/ft_printf.c libs/ft_printf/ft_put_adress.c libs/ft_printf/ft_put_hexdeci_lc.c libs/ft_printf/ft_put_hexdeci_uc.c libs/ft_printf/ft_put_unsigned_decimal.c \
 libs/ft_printf/ft_putchar.c libs/ft_printf/ft_putnbr.c libs/ft_printf/ft_putstr.c \
 libs/get_next_line/get_next_line.c libs/get_next_line/get_next_line_utils.c \
@@ -19,7 +19,7 @@ all: ${NAME}
 
 ${NAME}: ${OBJ_FILES}
 	ar rc ${ARCHIVE} $?
-	${CC} ${FLAGS} src/main.c -o ${NAME} ${ARCHIVE}
+	${CC} ${FLAGS} parsing/check_args.c -o ${NAME} ${ARCHIVE}
 
 %.o:%.c
 	${CC} ${FLAGS} -c $^ -o $@

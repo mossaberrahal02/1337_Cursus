@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:32:21 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 15:54:13 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:02:23 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,6 @@
 # include <string.h>
 # include <unistd.h>
 
-// Libc functions
-//#ifndef LIBFT_H include guards This ensures that
-// the contents of the header are included only once
-// in each source file
-//# define LIBFT_H   // avoid issues with multiple
-// definitions during the compilation process
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

@@ -6,11 +6,12 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:05:02 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/02 15:52:32 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:29:06 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../ft_printf/ft_printf.h"
 
 int	ft_isdigit(int c)
 {
