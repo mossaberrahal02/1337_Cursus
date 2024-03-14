@@ -10,11 +10,11 @@ char **args(int ac, char **av)
     char *av1 = NULL;
     char **av2 = NULL;
 
-    av1 = ft_strjoin(av1, "\0");
+    // av1 = ft_strjoin(av1, "\0");
     while (av[i])
     {
-        free(av1);
         av1 = ft_strjoin(av1,av[i]);
+        // free(av1);
         i++;
     }
     av2 = ft_split(av1, ' ');

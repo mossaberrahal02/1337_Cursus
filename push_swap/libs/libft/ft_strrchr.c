@@ -15,10 +15,10 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	last;
-	int	first;
+	// int	first;
 	int	i;
 
-	first = 0;
+	// first = 0;
 	i = 0;
 	last = ft_strlen(s);
 	if (*s == '\0' && (char)c == '\0')
