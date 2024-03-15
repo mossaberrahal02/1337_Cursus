@@ -78,13 +78,13 @@ static int	ft_fill(char **allocatedArray, char const *givenString,
 char	**ft_split(char const *s, char c)
 {
 	char	**splited;
-	int		i;
+	// int		i;
 	int		words;
 
 	if (!s)
 		return (NULL);
 	words = ft_countwords((char *)s, c);
-	i = 0;
+	// i = 0;
 	splited = (char **)malloc((words + 1) * sizeof(char *));
 	if (!splited)
 		return (NULL);

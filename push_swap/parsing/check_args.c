@@ -13,6 +13,7 @@ char **args(int ac, char **av)
     while (av[i])
     {
         av1 = ft_strjoin(av1,av[i]);
+        // free(av1);
         i++;
     }
     av2 = ft_split(av1, ' ');
