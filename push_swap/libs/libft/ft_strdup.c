@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 00:21:37 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/14 02:33:06 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/15 02:36:08 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 	// dup[i] = ' ';
-	dup[++i] = '\0';
+	dup[i] = '\0';
 	return (dup);
 }

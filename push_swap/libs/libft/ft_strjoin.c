@@ -6,19 +6,18 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 21:55:10 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/14 15:55:56 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/15 02:52:49 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*concat;
 
 	size_t	i;
 	size_t	j;
-
 	if (!s1 && s2)
 		return (ft_strdup(s2));
 	else if (s1 && !s2)
@@ -36,5 +35,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[j])
 		concat[i++] = s2[j++];
 	concat[i] = '\0';
+	free(s1);
 	return (concat);
 }
