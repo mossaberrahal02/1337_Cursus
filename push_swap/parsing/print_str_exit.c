@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_str_exit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 16:52:45 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/16 16:53:07 by merrahal         ###   ########.fr       */
+/*   Created: 2024/03/16 02:27:16 by merrahal          #+#    #+#             */
+/*   Updated: 2024/03/16 02:56:13 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../includes/push_swap.h"
 
-int main2(int ac, char **av)
+void print_str_exit_0(char *str)
 {
-    char **av2 = args(ac, av);
-    check_args(ac, av2);
-
-    ft_freee(av2);
-    return 0;
+    ft_putstr(str);
+    write(2, "\n",1);
+    exit(0);
 }
-int main(int ac, char **av)
+
+void print_str_exit_1(char *str)
 {
-    main2(ac, av);
-    // system("leaks push_swap");
+    ft_putstr(str);
+    write(2, "\n",1);
+    exit(1);
 }

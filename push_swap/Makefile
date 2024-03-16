@@ -4,7 +4,8 @@ CC = cc
 FLAGS = -Wall -Wextra #-Werror
 
 
-SRC_FILES = parsing/check_args.c \
+SRC_FILES = src/main.c \
+parsing/check_args.c  parsing/ft_atol.c parsing/ft_freee.c parsing/print_str_exit.c \
 libs/ft_printf/ft_printf.c libs/ft_printf/ft_put_adress.c libs/ft_printf/ft_put_hexdeci_lc.c libs/ft_printf/ft_put_hexdeci_uc.c libs/ft_printf/ft_put_unsigned_decimal.c \
 libs/ft_printf/ft_putchar.c libs/ft_printf/ft_putnbr.c libs/ft_printf/ft_putstr.c \
 libs/get_next_line/get_next_line.c libs/get_next_line/get_next_line_utils.c \
