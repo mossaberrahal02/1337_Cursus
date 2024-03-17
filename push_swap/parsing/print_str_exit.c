@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 02:27:16 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/16 02:56:13 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/16 23:03:30 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void print_str_exit_0(char *str)
 {
     ft_putstr(str);
-    write(2, "\n",1);
+    write(2, "\n",1);//i think it should not be 2 check it another time
+    system("leaks push_swap");
     exit(0);
 }
 
@@ -23,5 +24,6 @@ void print_str_exit_1(char *str)
 {
     ft_putstr(str);
     write(2, "\n",1);
+    system("leaks push_swap");
     exit(1);
 }

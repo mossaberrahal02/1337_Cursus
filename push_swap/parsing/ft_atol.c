@@ -6,13 +6,19 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 02:05:09 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/16 02:47:17 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/16 23:11:27 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../includes/push_swap.h"
 
-long	ft_atol(const char *str)
+void free_exit(char **av2)
+{
+	ft_freee(av2);
+	print_str_exit_1("Error");
+}
+
+long	ft_atol(const char *str, char **av2)
 {
 	int     i;
 	long    sign;
@@ -25,11 +31,8 @@ long	ft_atol(const char *str)
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
-        if (!(str[i + 1] <= '9' && str[i + 1] >= '0'))
-        {
-            write(1,"Error\n",6);
-            exit(1);
-        }
+		if (!(str[i + 1] <= '9' && str[i + 1] >= '0'))
+	
 		if (str[i] == '-')
 			sign *= -1;
 		i++;
@@ -37,12 +40,11 @@ long	ft_atol(const char *str)
 	while (str[i] <= '9' && str[i] >= '0')
 	{
 		result = result * 10 + str[i] - '0';
+		if(result > INT_MAX || result < INT_MIN)
+			free_exit(av2);
 		i++;
 	}
     if(str[i] != ' ' && str[i])
-    {
-        write(1,"Error\n",6);
-        exit(1);
-    }
+		free_exit(av2);
 	return (result * sign);
 }

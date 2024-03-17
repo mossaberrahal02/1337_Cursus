@@ -20,6 +20,43 @@ char **args(int ac, char **av)
     return(av2);
 }
 
+t_list     *ft_lstnew(int data)
+{
+    t_list *new;
+    new = malloc(sizeof(t_list));
+    if (new == NULL)
+		return (NULL);
+    new->data = data;
+    new->next = NULL;
+    return (new);
+}
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
+}
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*last;
+
+	if (!lst || !new)
+		return ;
+	if (*lst)
+	{
+		last = ft_lstlast(*lst);
+		last->next = new;
+	}
+	else
+		*lst = new;
+}
+
 void    args_are_digits(int ac, char **av2)
 {
     int i;
@@ -35,7 +72,7 @@ void    args_are_digits(int ac, char **av2)
         {
             if(!ft_isdigit(av2[i][j]))
             {
-                free(av2);
+                ft_freee(av2);
                 write(2, "Error\n", 6);
                 exit(1);
             }
@@ -43,7 +80,7 @@ void    args_are_digits(int ac, char **av2)
     }
     if(i < (ac - 1) || (ac - 1) == 0)
     {
-        free(av2);
+        ft_freee(av2);
         write(2, "Error\n", 6);
         exit(1);
     }
@@ -51,14 +88,21 @@ void    args_are_digits(int ac, char **av2)
 
 void convert_args(char **av2)
 {
-    int i = 0;
+    t_list *head;
+    t_list *new;
+    int i;
+    int num;
+
+    i = 0;
+    head = NULL;
     while(av2[i])
     {
-        ft_atol(av2[i]);
+        num = ft_atol(av2[i], av2);// hta hadi rah ka t exit i should free();
+        new = ft_lstnew(num);
+        ft_lstadd_back(&head, new);
         i++;
     }
 }
-
 
 
 void    check_args(int ac, char **av2)
@@ -68,4 +112,3 @@ void    check_args(int ac, char **av2)
 
     ft_putstr("good args\n");
 }
-
