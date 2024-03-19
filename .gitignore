@@ -6,7 +6,6 @@ a.out
 *.txt
 .vscode
 gnl.a
-so_long
 tokenlinux
 libft.a
 libftprintf.a
@@ -15,3 +14,4 @@ solong.dSYM/
 test.c
 tkherbi9aMakfile
 test
+checker_linx
