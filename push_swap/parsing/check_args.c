@@ -19,42 +19,14 @@ char **args(int ac, char **av)
     free(av1);
     return(av2);
 }
-
-t_list     *ft_lstnew(int data)
+void arg_with_anti_slash_0(int ac, int  i,  char **av2)
 {
-    t_list *new;
-    new = malloc(sizeof(t_list));
-    if (new == NULL)
-		return (NULL);
-    new->data = data;
-    new->next = NULL;
-    return (new);
-}
-
-t_list	*ft_lstlast(t_list *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst->next != NULL)
-	{
-		lst = lst->next;
-	}
-	return (lst);
-}
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*last;
-
-	if (!lst || !new)
-		return ;
-	if (*lst)
-	{
-		last = ft_lstlast(*lst);
-		last->next = new;
-	}
-	else
-		*lst = new;
+    if(i < (ac - 1) || (ac - 1) == 0)
+    {//in case ./push_swap "" 8 9 0 ...
+        ft_freee(av2);
+        write(2, "Error\n", 6);
+        exit(1);
+    }
 }
 
 void    args_are_digits(int ac, char **av2)
@@ -64,7 +36,10 @@ void    args_are_digits(int ac, char **av2)
 
     i = -1;
     if(!av2)
-        print_str_exit_0("av2 from check args is null --> args are null");
+    {
+        //free what should be freed
+        exit(0);
+    }
     while (av2[++i])
     {
         j = -1;
@@ -78,13 +53,10 @@ void    args_are_digits(int ac, char **av2)
             }
         }
     }
-    if(i < (ac - 1) || (ac - 1) == 0)
-    {
-        ft_freee(av2);
-        write(2, "Error\n", 6);
-        exit(1);
-    }
+    arg_with_anti_slash_0(ac, i, av2);
 }
+
+
 
 void convert_args(char **av2)
 {
@@ -102,6 +74,7 @@ void convert_args(char **av2)
         ft_lstadd_back(&head, new);
         i++;
     }
+    check_duplicates(head);// dkhol free dakchi dkhol
 }
 
 

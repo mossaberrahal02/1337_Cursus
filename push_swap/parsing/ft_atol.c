@@ -6,7 +6,7 @@
 /*   By: merrahal <merrahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 02:05:09 by merrahal          #+#    #+#             */
-/*   Updated: 2024/03/16 23:11:27 by merrahal         ###   ########.fr       */
+/*   Updated: 2024/03/17 20:36:43 by merrahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ long	ft_atol(const char *str, char **av2)
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (!(str[i + 1] <= '9' && str[i + 1] >= '0'))
-	
+			print_str_exit_1("Error");
 		if (str[i] == '-')
 			sign *= -1;
 		i++;

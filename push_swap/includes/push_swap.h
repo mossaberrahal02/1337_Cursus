@@ -3,19 +3,15 @@
 
 #include <stdio.h>
 #include <unistd.h>
-#include<limits.h>
+#include <limits.h>
 
 #include "../libs/ft_printf/ft_printf.h"
 #include "../libs/get_next_line/get_next_line.h"
 #include "../libs/libft/libft.h"
 
-typedef struct s_list
-{
-    int data;
-    struct s_list *next;
-} t_list;
 
 long	ft_atol(const char *str, char **av2);
+void    check_duplicates(t_list *head);
 void    ft_freee(char **str);
 void    print_str_exit_0(char *str);
 void    print_str_exit_1(char *str);
